@@ -1,30 +1,22 @@
 'use strict';
 
-const nullable = x => x != null ? x : ShadowArray(x);
-const ShadowArray = arr =>
-                    Object.getOwnPropertyNames(Array.prototype)
-                    .reduce((prev, curr) => {
+const ShadowArray = function(x) {
+  this.error = x;
+  
+  Object.getOwnPropertyNames(Array.prototype).forEach(prop => {
+    const isFunc = typeof Array.prototype[prop] === 'function';
+    isFunc && (this[prop] = f => this);
+    !isFunc && (this[prop] = x);
+  });
 
-                      prev[curr] = fn => arr;
-                      return prev;
-
-                    }, {});
-
-const ToArray = function(maybeArr) {
-  try {
-    const arr = Array.isArray(MaybeArray) ? [...maybeArr] : [...arguments];
-    return arr;
-  } catch (error) {
-    return ShadowArray(error);
-  }
+  return this;
 };
 
 const MaybeArray = maybeArr =>
-                   nullable(maybeArr);
+                   Array.isArray(maybeArr) ? maybeArr : new ShadowArray(maybeArr);
 
 var main = {
-  MaybeArray,
-  ToArray
+  MaybeArray
 };
 
 module.exports = main;
