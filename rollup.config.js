@@ -1,6 +1,5 @@
 import babel from 'rollup-plugin-babel';
 import babelrc from 'babelrc-rollup';
-import nodeResolve from 'rollup-plugin-node-resolve';
 
 let pkg = require('./package.json');
 let external = Object.keys(pkg.dependencies);
@@ -8,8 +7,7 @@ let external = Object.keys(pkg.dependencies);
 export default {
   entry: 'src/main.js',
   plugins: [
-    babel(babelrc()),
-    nodeResolve({jsnext: true, main: true })
+    babel(babelrc())
   ],
   external,
   targets: [
@@ -20,7 +18,7 @@ export default {
       sourceMap: true
     },
     {
-      dest: pkg.module['jsnext:main'],
+      dest: 'jsnext:main',
       format: 'es',
       sourceMap: true
     }

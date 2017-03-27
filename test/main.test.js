@@ -8,4 +8,10 @@ describe('MaybeArray', () => {
     expect(MaybeArray([1,2,3]))
     .to.eql([1,2,3]);
   });
+
+  it('should return a ShadowArray when given an array', () => {
+    expect(MaybeArray(null))
+    .to.eql({error: null});
+  });
+
 });
