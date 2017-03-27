@@ -18,7 +18,7 @@ export default {
       sourceMap: true
     },
     {
-      dest: 'jsnext:main',
+      dest: pkg.module,
       format: 'es',
       sourceMap: true
     }

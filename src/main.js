@@ -1,6 +1,6 @@
 const ShadowArray = function(x) {
   this.error = x;
-  
+
   Object.getOwnPropertyNames(Array.prototype).forEach(prop => {
     const isFunc = typeof Array.prototype[prop] === 'function';
     isFunc && (this[prop] = f => this);
@@ -13,6 +13,4 @@ const ShadowArray = function(x) {
 const MaybeArray = maybeArr =>
                    Array.isArray(maybeArr) ? maybeArr : new ShadowArray(maybeArr);
 
-export default {
-  MaybeArray
-};
+export default MaybeArray;

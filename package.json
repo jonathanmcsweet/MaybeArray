@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "a way to handle a non-array type being such that it would cause an Array method chain to fail",
   "main": "lib/umd/main.js",
-  "jsnext:main": "lib/es6/main.js",
+  "module": "lib/es6/main.js",
   "files": [
     "lib"
   ],
