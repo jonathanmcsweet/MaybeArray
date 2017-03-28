@@ -19,10 +19,6 @@
     "node": ">=5.7.1",
     "npm": ">=3.6.0"
   },
-  "nyc": {
-    "sourceMap": false,
-    "instrument": false
-  },
   "devDependencies": {
     "babel-eslint": "^7.2.1",
     "babel-plugin-istanbul": "^4.1.1",
