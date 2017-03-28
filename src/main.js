@@ -1,5 +1,5 @@
 const ShadowArray = function(x) {
-  this.error = x;
+  this.ARGUMENT = x;
 
   Object.getOwnPropertyNames(Array.prototype).forEach(prop => {
     const isFunc = typeof Array.prototype[prop] === 'function';

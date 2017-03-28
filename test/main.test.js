@@ -11,23 +11,23 @@ describe('MaybeArray', () => {
 
   it('should return a ShadowArray when given anything other than an array', () => {
     expect(MaybeArray(null))
-    .to.have.property('error')
+    .to.have.property('ARGUMENT')
     .and.equal(null);
 
     expect(MaybeArray('blah'))
-    .to.have.property('error')
+    .to.have.property('ARGUMENT')
     .and.equal('blah');
 
     expect(MaybeArray(undefined))
-    .to.have.property('error')
+    .to.have.property('ARGUMENT')
     .and.equal(undefined);
 
     expect(MaybeArray(1))
-    .to.have.property('error')
+    .to.have.property('ARGUMENT')
     .and.equal(1);
 
     expect(MaybeArray({}))
-    .to.have.property('error')
+    .to.have.property('ARGUMENT')
     .and.eql({});
   });
 
